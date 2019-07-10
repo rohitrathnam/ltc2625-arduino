@@ -17,3 +17,14 @@
 #define LTC2625_DAC_H 0x07
 #define LTC2625_DAC_ALL 0x0F
 
+class LTC2625
+{
+public:
+	LTC2625();
+	bool begin();
+	void setVoltage(uint8_t cmd, uint8_t address, uint16_t value);
+	
+protected:
+	uint8_t i2c_address;
+	TwoWire *_wire;
+}
